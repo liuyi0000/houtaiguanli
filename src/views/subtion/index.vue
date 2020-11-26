@@ -1,9 +1,7 @@
 <template>
   <div>
-    <h3>当前count值:{{count}}</h3>
-    <button @click="sunheader">-1</button>
-    <button @click="sunheader1">-N</button>
-
+    <h3>当前count值为：{{count}}{{params}}</h3>
+    <button @click="subheader">-1</button>
   </div>
 </template>
 
@@ -16,21 +14,18 @@ import {mapState,mapMutations} from 'vuex'
       }
     },
     computed:{
-      ...mapState(['count'])
+      ...mapState(['count','params'])
     },
     methods:{
-      ...mapMutations(['sub','subN']),
-      sunheader(){
+      ...mapMutations(['sub']),
+      subheader(){
         this.sub()
-      },
-      sunheader1(){
-        this.subN(2)
       }
     }
   }
 </script>
 
-<style  scoped>
+<style scoped>
 
 
 </style>

@@ -5,7 +5,7 @@
       :tableData="tableData"
       :totalPage="pageObj.totalPage"
       @getData="pageMutated"
-      :tableLoading='tableLoading'
+      :tableLoading="tableLoading"
     ></tableList>
   </div>
 </template>
@@ -152,5 +152,4 @@ export default {
 };
 </script>
 
-<style  scoped>
-</style>
+<style scoped></style>

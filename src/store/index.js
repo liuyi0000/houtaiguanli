@@ -1,37 +1,35 @@
-import { subset } from 'semver'
 import Vue from 'vue'
 import Vuex from 'vuex'
-
 Vue.use(Vuex)
-
 export default new Vuex.Store({
-  state:{
-    count:0
+  state: {
+    count:0,
+    params:''
   },
   mutations: {
+    getParams(state,param){
+      state.params=param
+    },
     add(state){
       state.count++
     },
-    addN(state,spet){
-      state.count +=spet
+    addN(state,num){
+      state.count+=num
     },
     sub(state){
       state.count--
-    },
-    subN(state,spet){
-      state.count -=spet
     }
   },
-  actions:{
+  actions: {
     addsync(context){
       setTimeout(() => {
         context.commit('add')
-      }, 2000);
+      }, 5000);
     }
   },
   getters: {
     shouNum:state=>{
-      return '当前count值：【'+state.count +'】'
+      return '当前count值：【'+state.count+'】'
     }
   }
 })

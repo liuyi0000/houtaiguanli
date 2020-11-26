@@ -12,7 +12,8 @@ import{mapState,mapMutations,mapActions,mapGetters} from 'vuex'
   export default {
     data () {
       return {
-
+        num:'默认',
+        mm:'改变了'
       }
     },
     computed:{
@@ -20,10 +21,12 @@ import{mapState,mapMutations,mapActions,mapGetters} from 'vuex'
       ...mapGetters(['shouNum'])
     },
     methods:{
-      ...mapMutations(['add','addN']),
+      ...mapMutations(['add','addN','getParams']),
       ...mapActions(['addsync']),
       addheader(){
         this.add()
+        let dddddd =this.mm
+        this.$store.commit('getParams',dddddd)
       },
       addheader1(){
         this.addN(2)
@@ -31,6 +34,10 @@ import{mapState,mapMutations,mapActions,mapGetters} from 'vuex'
       addheader2(){
         this.addsync()
       }
+    },
+    mounted(){
+      let param=this.num
+        this.$store.commit('getParams',param)
     }
   }
 </script>
