@@ -39,7 +39,7 @@
               <!--表示可以展开的一组 -->
               <template slot="title" @click="clickTitle">
                 <!--图标 -->
-                <i class="el-icon-eleme"></i>
+                <i :class="'el-icon-' + item1.icon"></i>
                 <!--文字 -->
                 <span>{{ item1.name }}</span>
               </template>
@@ -78,6 +78,7 @@ export default {
           name: "企业信息管理",
           order: "1",
           path: "componyinfomanage",
+          icon: 's-home',
           children: [
             {
               path: "componyinfomanage",
@@ -89,6 +90,7 @@ export default {
           path: "postinfomange",
           name: "岗位信息管理",
           order: "2",
+          icon: 'video-play',
           children: [
             {
               path: "postinfomange",
@@ -100,6 +102,7 @@ export default {
           path: "orderinfomange",
           name: "订单信息管理",
           order: "3",
+          icon: 'user',
           children: [
             {
               path: "orderinfomange",
@@ -111,6 +114,7 @@ export default {
           path: "datamangeinfo",
           name: "数据字典",
           order: "4",
+          icon: 'setting',
           children: [
             {
               path: "datamangeinfo",
@@ -122,6 +126,7 @@ export default {
           path: "test",
           name: "测试",
           order: "5",
+          icon: 's-promotion',
           children: [
             {
               path: "test",
