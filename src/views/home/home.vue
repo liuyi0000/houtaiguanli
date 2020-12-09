@@ -27,13 +27,13 @@
             :unique-opened="true"
             :router="true"
             class="menu"
-            background-color=" #3A3A3A"
+            background-color=" #6666"
             text-color="#fff"
             active-text-color="#ffd04b"
           >
             <el-submenu
               :index="' ' + item1.order"
-              v-for="(item1, index) in menuData"
+              v-for="item1 in menuData"
               :key="item1.path"
             >
               <!--表示可以展开的一组 -->
@@ -46,7 +46,7 @@
               <el-menu-item
                 class="menuItem"
                 @click="clickMenuItem"
-                v-for="(item2, index) in item1.children"
+                v-for="item2 in item1.children"
                 :key="item2.path"
                 :index="item2.path"
               >
@@ -187,7 +187,7 @@ export default {
   background-color: #eeee;
 }
 .aside {
-  background: #3a3a3a;
+  background: #666;
   color: #fff;
   height: 100%;
 }
